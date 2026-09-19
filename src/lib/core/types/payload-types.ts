@@ -10,8 +10,7 @@
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "OrderStatus".
  */
-export type OrderStatus =
-  ("new" | "ready" | "done" | "canceled" | "refunded") | null;
+export type OrderStatus = ('new' | 'ready' | 'done' | 'canceled' | 'refunded') | null;
 /**
  * Supported timezones in IANA format.
  *
@@ -19,53 +18,53 @@ export type OrderStatus =
  * via the `definition` "supportedTimezones".
  */
 export type SupportedTimezones =
-  | "Pacific/Midway"
-  | "Pacific/Niue"
-  | "Pacific/Honolulu"
-  | "Pacific/Rarotonga"
-  | "America/Anchorage"
-  | "Pacific/Gambier"
-  | "America/Los_Angeles"
-  | "America/Tijuana"
-  | "America/Denver"
-  | "America/Phoenix"
-  | "America/Chicago"
-  | "America/Guatemala"
-  | "America/New_York"
-  | "America/Bogota"
-  | "America/Caracas"
-  | "America/Santiago"
-  | "America/Buenos_Aires"
-  | "America/Sao_Paulo"
-  | "Atlantic/South_Georgia"
-  | "Atlantic/Azores"
-  | "Atlantic/Cape_Verde"
-  | "Europe/London"
-  | "Europe/Berlin"
-  | "Africa/Lagos"
-  | "Europe/Athens"
-  | "Africa/Cairo"
-  | "Europe/Moscow"
-  | "Asia/Riyadh"
-  | "Asia/Dubai"
-  | "Asia/Baku"
-  | "Asia/Karachi"
-  | "Asia/Tashkent"
-  | "Asia/Calcutta"
-  | "Asia/Dhaka"
-  | "Asia/Almaty"
-  | "Asia/Jakarta"
-  | "Asia/Bangkok"
-  | "Asia/Shanghai"
-  | "Asia/Singapore"
-  | "Asia/Tokyo"
-  | "Asia/Seoul"
-  | "Australia/Brisbane"
-  | "Australia/Sydney"
-  | "Pacific/Guam"
-  | "Pacific/Noumea"
-  | "Pacific/Auckland"
-  | "Pacific/Fiji";
+  | 'Pacific/Midway'
+  | 'Pacific/Niue'
+  | 'Pacific/Honolulu'
+  | 'Pacific/Rarotonga'
+  | 'America/Anchorage'
+  | 'Pacific/Gambier'
+  | 'America/Los_Angeles'
+  | 'America/Tijuana'
+  | 'America/Denver'
+  | 'America/Phoenix'
+  | 'America/Chicago'
+  | 'America/Guatemala'
+  | 'America/New_York'
+  | 'America/Bogota'
+  | 'America/Caracas'
+  | 'America/Santiago'
+  | 'America/Buenos_Aires'
+  | 'America/Sao_Paulo'
+  | 'Atlantic/South_Georgia'
+  | 'Atlantic/Azores'
+  | 'Atlantic/Cape_Verde'
+  | 'Europe/London'
+  | 'Europe/Berlin'
+  | 'Africa/Lagos'
+  | 'Europe/Athens'
+  | 'Africa/Cairo'
+  | 'Europe/Moscow'
+  | 'Asia/Riyadh'
+  | 'Asia/Dubai'
+  | 'Asia/Baku'
+  | 'Asia/Karachi'
+  | 'Asia/Tashkent'
+  | 'Asia/Calcutta'
+  | 'Asia/Dhaka'
+  | 'Asia/Almaty'
+  | 'Asia/Jakarta'
+  | 'Asia/Bangkok'
+  | 'Asia/Shanghai'
+  | 'Asia/Singapore'
+  | 'Asia/Tokyo'
+  | 'Asia/Seoul'
+  | 'Australia/Brisbane'
+  | 'Australia/Sydney'
+  | 'Pacific/Guam'
+  | 'Pacific/Noumea'
+  | 'Pacific/Auckland'
+  | 'Pacific/Fiji';
 
 export interface Config {
   auth: {
@@ -86,18 +85,18 @@ export interface Config {
     carts: Cart;
     orders: Order;
     transactions: Transaction;
-    "payload-kv": PayloadKv;
-    "payload-locked-documents": PayloadLockedDocument;
-    "payload-preferences": PayloadPreference;
-    "payload-migrations": PayloadMigration;
+    'payload-kv': PayloadKv;
+    'payload-locked-documents': PayloadLockedDocument;
+    'payload-preferences': PayloadPreference;
+    'payload-migrations': PayloadMigration;
   };
   collectionsJoins: {
     variantTypes: {
-      options: "variantOptions";
+      options: 'variantOptions';
     };
     products: {
-      reviews: "reviews";
-      variants: "variants";
+      reviews: 'reviews';
+      variants: 'variants';
     };
   };
   collectionsSelect: {
@@ -114,23 +113,20 @@ export interface Config {
     carts: CartsSelect<false> | CartsSelect<true>;
     orders: OrdersSelect<false> | OrdersSelect<true>;
     transactions: TransactionsSelect<false> | TransactionsSelect<true>;
-    "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
-    "payload-locked-documents":
-      PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
-    "payload-preferences":
-      PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
-    "payload-migrations":
-      PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
+    'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
+    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
+    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
+    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
     defaultIDType: number;
   };
   fallbackLocale: null;
   globals: {
-    "site-settings": SiteSetting;
+    'site-settings': SiteSetting;
   };
   globalsSelect: {
-    "site-settings": SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
   };
   locale: null;
   widgets: {
@@ -182,7 +178,7 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
-  roles?: ("admin" | "customer")[] | null;
+  roles?: ('admin' | 'customer')[] | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -200,7 +196,7 @@ export interface User {
       }[]
     | null;
   password?: string | null;
-  collection: "users";
+  collection: 'users';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -210,7 +206,7 @@ export interface Page {
   id: number;
   title: string;
   hero: {
-    type: "none" | "highImpact" | "mediumImpact" | "lowImpact";
+    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
     richText?: {
       root: {
         type: string;
@@ -219,8 +215,8 @@ export interface Page {
           version: number;
           [k: string]: unknown;
         }[];
-        direction: ("ltr" | "rtl") | null;
-        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
         indent: number;
         version: number;
       };
@@ -229,33 +225,31 @@ export interface Page {
     links?:
       | {
           link: {
-            type?: ("reference" | "custom") | null;
+            type?: ('reference' | 'custom') | null;
             reference?:
               | ({
-                  relationTo: "pages";
+                  relationTo: 'pages';
                   value: number | Page;
                 } | null)
               | ({
-                  relationTo: "products";
+                  relationTo: 'products';
                   value: number | Product;
                 } | null)
               | ({
-                  relationTo: "category";
+                  relationTo: 'category';
                   value: number | Category;
                 } | null);
             url?: string | null;
             label: string;
             newTab?: boolean | null;
-            appearance?: ("default" | "outline") | null;
+            appearance?: ('default' | 'outline') | null;
           };
           id?: string | null;
         }[]
       | null;
     media?: (number | null) | Media;
   };
-  layout: (
-    CallToActionBlock | ArchiveBlock | FaqBlock | ContentBlock | HtmlEmbedBlock
-  )[];
+  layout: (CallToActionBlock | ArchiveBlock | FaqBlock | ContentBlock | HtmlEmbedBlock)[];
   meta: {
     title: string;
     /**
@@ -271,7 +265,7 @@ export interface Page {
   slug: string;
   updatedAt: string;
   createdAt: string;
-  _status?: ("draft" | "published") | null;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -302,8 +296,8 @@ export interface Product {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ("ltr" | "rtl") | null;
-      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
       indent: number;
       version: number;
     };
@@ -347,7 +341,7 @@ export interface Product {
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
-  _status?: ("draft" | "published") | null;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -366,8 +360,8 @@ export interface Category {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ("ltr" | "rtl") | null;
-      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
       indent: number;
       version: number;
     };
@@ -387,7 +381,7 @@ export interface Category {
     | null;
   updatedAt: string;
   createdAt: string;
-  _status?: ("draft" | "published") | null;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -396,7 +390,6 @@ export interface Category {
 export interface Media {
   id: number;
   alt: string;
-  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -440,7 +433,7 @@ export interface VariantType {
   /**
    * Choose how this variant type appears in the storefront.
    */
-  selectorStyle: "swatch" | "buttons" | "select";
+  selectorStyle: 'swatch' | 'buttons' | 'select';
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
@@ -497,7 +490,7 @@ export interface Variant {
   updatedAt: string;
   createdAt: string;
   deletedAt?: string | null;
-  _status?: ("draft" | "published") | null;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -512,8 +505,8 @@ export interface CallToActionBlock {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ("ltr" | "rtl") | null;
-      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
       indent: number;
       version: number;
     };
@@ -522,31 +515,31 @@ export interface CallToActionBlock {
   links?:
     | {
         link: {
-          type?: ("reference" | "custom") | null;
+          type?: ('reference' | 'custom') | null;
           reference?:
             | ({
-                relationTo: "pages";
+                relationTo: 'pages';
                 value: number | Page;
               } | null)
             | ({
-                relationTo: "products";
+                relationTo: 'products';
                 value: number | Product;
               } | null)
             | ({
-                relationTo: "category";
+                relationTo: 'category';
                 value: number | Category;
               } | null);
           url?: string | null;
           label: string;
           newTab?: boolean | null;
-          appearance?: ("default" | "outline") | null;
+          appearance?: ('default' | 'outline') | null;
         };
         id?: string | null;
       }[]
     | null;
   id?: string | null;
   blockName?: string | null;
-  blockType: "cta";
+  blockType: 'cta';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -561,17 +554,17 @@ export interface ArchiveBlock {
         version: number;
         [k: string]: unknown;
       }[];
-      direction: ("ltr" | "rtl") | null;
-      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
       indent: number;
       version: number;
     };
     [k: string]: unknown;
   } | null;
-  introAlignment: "start" | "center";
-  contentType: "products" | "pages" | "categories";
-  displayMode: "grid" | "autoScroll";
-  populateBy: "collection" | "selection";
+  introAlignment: 'start' | 'center';
+  contentType: 'products' | 'pages' | 'categories';
+  displayMode: 'grid' | 'autoScroll';
+  populateBy: 'collection' | 'selection';
   categories?: (number | Category)[] | null;
   limit?: number | null;
   selectedDocs?: (number | Product)[] | null;
@@ -579,7 +572,7 @@ export interface ArchiveBlock {
   selectedCategories?: (number | Category)[] | null;
   id?: string | null;
   blockName?: string | null;
-  blockType: "archive";
+  blockType: 'archive';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -595,7 +588,7 @@ export interface FaqBlock {
     | null;
   id?: string | null;
   blockName?: string | null;
-  blockType: "faq";
+  blockType: 'faq';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -604,7 +597,7 @@ export interface FaqBlock {
 export interface ContentBlock {
   columns?:
     | {
-        size: "oneThird" | "half" | "twoThirds" | "full";
+        size: 'oneThird' | 'half' | 'twoThirds' | 'full';
         richText?: {
           root: {
             type: string;
@@ -613,9 +606,8 @@ export interface ContentBlock {
               version: number;
               [k: string]: unknown;
             }[];
-            direction: ("ltr" | "rtl") | null;
-            format:
-              "left" | "start" | "center" | "right" | "end" | "justify" | "";
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
             indent: number;
             version: number;
           };
@@ -623,18 +615,18 @@ export interface ContentBlock {
         } | null;
         enableLink?: boolean | null;
         link?: {
-          type?: ("reference" | "custom") | null;
+          type?: ('reference' | 'custom') | null;
           reference?:
             | ({
-                relationTo: "pages";
+                relationTo: 'pages';
                 value: number | Page;
               } | null)
             | ({
-                relationTo: "products";
+                relationTo: 'products';
                 value: number | Product;
               } | null)
             | ({
-                relationTo: "category";
+                relationTo: 'category';
                 value: number | Category;
               } | null);
           url?: string | null;
@@ -646,7 +638,7 @@ export interface ContentBlock {
     | null;
   id?: string | null;
   blockName?: string | null;
-  blockType: "content";
+  blockType: 'content';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -656,7 +648,7 @@ export interface HtmlEmbedBlock {
   contentHtml: string;
   id?: string | null;
   blockName?: string | null;
-  blockType: "htmlEmbed";
+  blockType: 'htmlEmbed';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -675,46 +667,46 @@ export interface Address {
   state?: string | null;
   postalCode?: string | null;
   country:
-    | "US"
-    | "GB"
-    | "CA"
-    | "AU"
-    | "AT"
-    | "BE"
-    | "BR"
-    | "BG"
-    | "CY"
-    | "CZ"
-    | "DK"
-    | "EE"
-    | "FI"
-    | "FR"
-    | "DE"
-    | "GR"
-    | "HK"
-    | "HU"
-    | "IN"
-    | "IE"
-    | "IT"
-    | "JP"
-    | "LV"
-    | "LT"
-    | "LU"
-    | "MY"
-    | "MT"
-    | "MX"
-    | "NL"
-    | "NZ"
-    | "NO"
-    | "PL"
-    | "PT"
-    | "RO"
-    | "SG"
-    | "SK"
-    | "SI"
-    | "ES"
-    | "SE"
-    | "CH";
+    | 'US'
+    | 'GB'
+    | 'CA'
+    | 'AU'
+    | 'AT'
+    | 'BE'
+    | 'BR'
+    | 'BG'
+    | 'CY'
+    | 'CZ'
+    | 'DK'
+    | 'EE'
+    | 'FI'
+    | 'FR'
+    | 'DE'
+    | 'GR'
+    | 'HK'
+    | 'HU'
+    | 'IN'
+    | 'IE'
+    | 'IT'
+    | 'JP'
+    | 'LV'
+    | 'LT'
+    | 'LU'
+    | 'MY'
+    | 'MT'
+    | 'MX'
+    | 'NL'
+    | 'NZ'
+    | 'NO'
+    | 'PL'
+    | 'PT'
+    | 'RO'
+    | 'SG'
+    | 'SK'
+    | 'SI'
+    | 'ES'
+    | 'SE'
+    | 'CH';
   phone?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -736,9 +728,9 @@ export interface Cart {
   secret?: string | null;
   customer?: (number | null) | User;
   purchasedAt?: string | null;
-  status?: ("active" | "purchased" | "abandoned") | null;
+  status?: ('active' | 'purchased' | 'abandoned') | null;
   subtotal?: number | null;
-  currency?: "USD" | null;
+  currency?: 'USD' | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -792,14 +784,13 @@ export interface Transaction {
     country?: string | null;
     phone?: string | null;
   };
-  status:
-    "pending" | "succeeded" | "failed" | "cancelled" | "expired" | "refunded";
+  status: 'pending' | 'succeeded' | 'failed' | 'cancelled' | 'expired' | 'refunded';
   customer?: (number | null) | User;
   customerEmail?: string | null;
   order?: (number | null) | Order;
   cart?: (number | null) | Cart;
   amount?: number | null;
-  currency?: "USD" | null;
+  currency?: 'USD' | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -828,60 +819,60 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: "users";
+        relationTo: 'users';
         value: number | User;
       } | null)
     | ({
-        relationTo: "pages";
+        relationTo: 'pages';
         value: number | Page;
       } | null)
     | ({
-        relationTo: "category";
+        relationTo: 'category';
         value: number | Category;
       } | null)
     | ({
-        relationTo: "media";
+        relationTo: 'media';
         value: number | Media;
       } | null)
     | ({
-        relationTo: "reviews";
+        relationTo: 'reviews';
         value: number | Review;
       } | null)
     | ({
-        relationTo: "addresses";
+        relationTo: 'addresses';
         value: number | Address;
       } | null)
     | ({
-        relationTo: "variants";
+        relationTo: 'variants';
         value: number | Variant;
       } | null)
     | ({
-        relationTo: "variantTypes";
+        relationTo: 'variantTypes';
         value: number | VariantType;
       } | null)
     | ({
-        relationTo: "variantOptions";
+        relationTo: 'variantOptions';
         value: number | VariantOption;
       } | null)
     | ({
-        relationTo: "products";
+        relationTo: 'products';
         value: number | Product;
       } | null)
     | ({
-        relationTo: "carts";
+        relationTo: 'carts';
         value: number | Cart;
       } | null)
     | ({
-        relationTo: "orders";
+        relationTo: 'orders';
         value: number | Order;
       } | null)
     | ({
-        relationTo: "transactions";
+        relationTo: 'transactions';
         value: number | Transaction;
       } | null);
   globalSlug?: string | null;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: number | User;
   };
   updatedAt: string;
@@ -894,7 +885,7 @@ export interface PayloadLockedDocument {
 export interface PayloadPreference {
   id: number;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: number | User;
   };
   key?: string | null;
@@ -1113,7 +1104,6 @@ export interface CategorySelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
-  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -1379,18 +1369,18 @@ export interface SiteSetting {
     navItems?:
       | {
           link: {
-            type?: ("reference" | "custom") | null;
+            type?: ('reference' | 'custom') | null;
             reference?:
               | ({
-                  relationTo: "pages";
+                  relationTo: 'pages';
                   value: number | Page;
                 } | null)
               | ({
-                  relationTo: "products";
+                  relationTo: 'products';
                   value: number | Product;
                 } | null)
               | ({
-                  relationTo: "category";
+                  relationTo: 'category';
                   value: number | Category;
                 } | null);
             url?: string | null;
@@ -1416,18 +1406,18 @@ export interface FooterNavBlock {
   links?:
     | {
         link: {
-          type?: ("reference" | "custom") | null;
+          type?: ('reference' | 'custom') | null;
           reference?:
             | ({
-                relationTo: "pages";
+                relationTo: 'pages';
                 value: number | Page;
               } | null)
             | ({
-                relationTo: "products";
+                relationTo: 'products';
                 value: number | Product;
               } | null)
             | ({
-                relationTo: "category";
+                relationTo: 'category';
                 value: number | Category;
               } | null);
           url?: string | null;
@@ -1439,7 +1429,7 @@ export interface FooterNavBlock {
     | null;
   id?: string | null;
   blockName?: string | null;
-  blockType: "footerNav";
+  blockType: 'footerNav';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1450,29 +1440,29 @@ export interface FooterIconsBlock {
   items?:
     | {
         icon:
-          | "instagram"
-          | "facebook"
-          | "tiktok"
-          | "linkedin"
-          | "youtube"
-          | "x"
-          | "whatsapp"
-          | "website"
-          | "phone"
-          | "email";
+          | 'instagram'
+          | 'facebook'
+          | 'tiktok'
+          | 'linkedin'
+          | 'youtube'
+          | 'x'
+          | 'whatsapp'
+          | 'website'
+          | 'phone'
+          | 'email';
         link: {
-          type?: ("reference" | "custom") | null;
+          type?: ('reference' | 'custom') | null;
           reference?:
             | ({
-                relationTo: "pages";
+                relationTo: 'pages';
                 value: number | Page;
               } | null)
             | ({
-                relationTo: "products";
+                relationTo: 'products';
                 value: number | Product;
               } | null)
             | ({
-                relationTo: "category";
+                relationTo: 'category';
                 value: number | Category;
               } | null);
           url?: string | null;
@@ -1484,7 +1474,7 @@ export interface FooterIconsBlock {
     | null;
   id?: string | null;
   blockName?: string | null;
-  blockType: "footerIcons";
+  blockType: 'footerIcons';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1584,7 +1574,7 @@ export interface CollectionsWidget {
   data?: {
     [k: string]: unknown;
   };
-  width: "full";
+  width: 'full';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1594,6 +1584,7 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-declare module "payload" {
+
+declare module 'payload' {
   export interface GeneratedTypes extends Config {}
 }

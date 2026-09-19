@@ -7,7 +7,7 @@ import SeedService from "./index";
 export const resetDb = async () => {
   const { execSync } = await import("node:child_process");
 
-  execSync("yes | payload migrate:fresh", {
+  execSync("payload migrate:fresh --forceAcceptWarning", {
     stdio: "inherit",
     env: process.env,
     shell: process.platform === "win32" ? "cmd.exe" : "/bin/sh",

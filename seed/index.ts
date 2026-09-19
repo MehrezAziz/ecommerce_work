@@ -185,12 +185,18 @@ export default class SeedService {
 
       for (let i = 1; i <= imageCount; i++) {
         const filename = `${product.image_name}_${i}${IMAGE_EXTENSION}`;
-        const id = await this.uploadMediaFromDisk(
-          join("images", filename),
-          product.image_name,
-        );
-        this.ids.mediaIds.push(id);
-        productMediaIds.push(id);
+        try {
+          const id = await this.uploadMediaFromDisk(
+            join("images", filename),
+            product.image_name,
+          );
+          this.ids.mediaIds.push(id);
+          productMediaIds.push(id);
+        } catch (err) {
+          this.payload.logger.warn(
+            `seedMedia:missing-file images/${filename} — run "pnpm seed" again after downloading images per README`,
+          );
+        }
         await new Promise((resolve) => setTimeout(resolve, 100));
       }
 

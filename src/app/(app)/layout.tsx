@@ -32,7 +32,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <Head />
-      <body>
+      <body suppressHydrationWarning>
         <AnalyticsLayout />
         <Providers>
           <div className="min-h-screen flex flex-col">
