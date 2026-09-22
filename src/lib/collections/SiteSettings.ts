@@ -30,6 +30,7 @@ export const SiteSettings: GlobalConfig = {
       handler: async () => {
         try {
           revalidate(AppConst.CACHE_TAG_BOOTSTRAP);
+          revalidate("site-settings");
           return Response.json({ ok: true });
         } catch {
           return Response.json({ ok: false }, { status: 500 });
